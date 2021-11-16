@@ -34,7 +34,7 @@
 #' @export
 
 
-impute <- function(df, df_true = NULL, factors = NULL, drop = NULL, ntree = 500, ...){
+impute_mf <- function(df, df_true = NULL, factors = NULL, drop = NULL, ntree = 500, ...){
   df_drop <- df[,drop] # save drop variables
   # convert to be factor variables to character, then to factor. This insures no excess factor levels if the variable is originally numeric
   df[,factors] <- lapply(factors, function(factor)as.factor(as.character(df[,factor])))
